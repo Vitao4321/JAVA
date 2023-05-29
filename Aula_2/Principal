@@ -1,0 +1,76 @@
+package Aula_02;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Principal {
+
+	public static void main(String[] args) throws IOException{
+		// Cria um objeto para entrada de dados
+		BufferedReader dados = new BufferedReader(new InputStreamReader(System.in));
+		
+		// Menu
+		int op = 0;
+		do {
+			System.out.println("------------------------------------------");
+			System.out.println("Menu");
+			System.out.println("------------------------------------------");
+			System.out.println("Media do aluno -> 1");
+			System.out.println("Tabuada -> 2");
+			System.out.println("Sair -> 0");
+			System.out.println("------------------------------------------");
+			System.out.print("Opção: ");
+			op = Integer.parseInt(dados.readLine());
+			
+			switch(op) {
+				case 1: {
+					System.out.print("RA: ");
+					int ra = Integer.parseInt(dados.readLine()); // Converte para int
+					System.out.print("Nome do aluno: ");
+					String nome = dados.readLine();
+					System.out.print("Disciplina: ");
+					String disciplina = dados.readLine();
+					System.out.print("Nome QOL (2.0): ");
+					double qol = Double.parseDouble(dados.readLine()); // Converte para Double 
+					System.out.print("Nome APR (6.0): ");
+					double apr = Double.parseDouble(dados.readLine()); // Converte para Double
+					System.out.print("Nome PE1 (6.0): ");
+					double pe1 = Double.parseDouble(dados.readLine()); // Converte para Double
+					System.out.print("Nome ASI (3.0): "); 
+					double asi = Double.parseDouble(dados.readLine()); // Converte para Double
+					System.out.print("Nome PE2 (3.0): "); 
+					double pe2 = Double.parseDouble(dados.readLine()); // Converte para Double
+					
+					// Calcula a media do aluno
+					double media = (qol + apr + pe1 + asi + pe2) / 2;
+					
+					System.out.println("------------------------------------------");
+					System.out.println("Média final de: " + media);
+					System.out.println("------------------------------------------");
+					
+					if(media >= 6)
+						System.out.print("Situação final: Aprovado");
+					else
+						System.out.print("Situação final: Reprovado");
+				} break;
+				case 2: {
+					System.out.println("------------------------------------------");
+					System.out.println("Tabuada");
+					System.out.println("------------------------------------------");
+					System.out.println("Digite a tabuada que deseja: ");
+					int tabuada = Integer.parseInt(dados.readLine());
+					for (int contador = 1; contador <= 10; contador++)
+						System.out.println(tabuada + " x " + contador + " = " + (tabuada * contador));
+				} break;
+				case 3: {
+	
+				} break;
+				
+			}
+			
+		} while(op > 0);
+		
+	}
+
+}
