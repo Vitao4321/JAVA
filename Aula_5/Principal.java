@@ -73,9 +73,7 @@ public class Principal {
 				for(int conta = 0; conta < cur.size(); conta++)
 					listacurso += cur.get(conta).mostrar().substring(6, cur.get(conta).mostrar().length()) + " | ";
 				
-				listacurso += "]: ";
-				
-				System.out.print(listacurso);
+				System.out.print(listacurso.substring(0, listacurso.length() - 1) + "]: " );
 				int aux = Integer.parseInt(dados.readLine());
 				
 				// Criação do objeto do tipo Curso
